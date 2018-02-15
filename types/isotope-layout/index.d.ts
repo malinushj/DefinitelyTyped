@@ -270,12 +270,16 @@ interface Isotope extends IsotopeLibrary.Isotope { }
 
 declare var Isotope: {
     prototype: IsotopeLibrary.Isotope;
-    new (selector: string): IsotopeLibrary.Isotope;
+    new (elementOrSelector: HTMLElement | string, options: IsotopeLibrary.IsotopeOptions): IsotopeLibrary.Isotope;
     /**
      * Get the Isotope instance via its element. Isotope.data() is useful for getting the Isotope instance in JavaScript, after it has been initalized in HTML.
      */
     data(element: HTMLElement | string): IsotopeLibrary.Isotope;
 };
+
+declare module 'isotope-layout' {
+    export default Isotope;
+}
 
 interface JQuery {
     /**
